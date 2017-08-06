@@ -13,7 +13,7 @@ const CardType = require('./types/card');
 
 module.exports = {
 	Query: {
-		allSets,
+		sets: allSets,
 		mySets,
 		set
 	},
