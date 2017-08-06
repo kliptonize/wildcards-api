@@ -1,7 +1,7 @@
-FROM node:boron
+FROM node:8.2.1
 
 # Expose the default port
-EXPOSE 8080
+EXPOSE 3000
 
 # Create/Set the working directory
 RUN mkdir /app
