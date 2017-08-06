@@ -1,4 +1,3 @@
-const Image = require('./meta/image');
 const Account = require('./account');
 const Topic = require('./topic');
 const Source = require('./source');
@@ -8,7 +7,7 @@ const Set = `
 	type Set {
 		id: ID!
 		title: String!
-		image: Image
+		image: String
 		tags: [String]
 		source: [Source]
 		sourceUrl: String
@@ -19,4 +18,4 @@ const Set = `
 	}
 `;
 
-module.exports = [Set, ...Image, Account, Topic, Source];
+module.exports = [Set, Account, Topic, Source];

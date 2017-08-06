@@ -11,7 +11,7 @@ This'd be the API for the Wildcards app & website.
 - Profit
 
 ### w/ Node & Mongodb
-- Kickstart Mongodb (probably with `mongodb`)
+- Kickstart Mongodb (or install if you don't have it) (probably with `mongodb`)
 - Import mongofiles with `mongorestore --host=localhost:27017 --db=wildcards --dir=path/to/mongodump`
 - Kickstart node with `npm index.js`
 - Tada.

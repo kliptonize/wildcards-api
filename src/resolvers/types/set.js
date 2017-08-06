@@ -21,6 +21,9 @@ module.exports = {
 			});
 		});
 		return root.source;
+	},
+	image: async(root, data) => {
+		return root.image.path;
 	}
 	/*
 	 * Should work, but doesn't
