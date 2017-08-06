@@ -5,7 +5,7 @@ This'd be the API for the Wildcards app & website.
 ### w/ Docker
 - Install Docker
 - Run `docker build https://github.com/kliptonize/wildcards-api.git#master -t wildcards-api`
-- Run `docker run wildcards-api` 
+- Run `docker-compose build && docker-compose up wildcards-api` 
 - Import mongofiles with `mongorestore -h address-of-mongo-container-here:27017 -db wildcards path/to/mongodump`
 - ...?
 - Profit
