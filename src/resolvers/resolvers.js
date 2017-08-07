@@ -2,6 +2,8 @@
 const allSets = require('./queries/all-sets');
 const mySets = require('./queries/my-sets');
 const set = require('./queries/set');
+const topics = require('./queries/topics');
+const tags = require('./queries/tags');
 
 //Load mutations
 const signinUser = require('./mutations/signin-user');
@@ -10,12 +12,15 @@ const signinUser = require('./mutations/signin-user');
 const SetType = require('./types/set');
 const AccountType = require('./types/account');
 const CardType = require('./types/card');
+const TagType = require('./types/tag');
 
 module.exports = {
 	Query: {
 		sets: allSets,
 		mySets,
-		set
+		set,
+		topics,
+		tags
 	},
 	Mutation: {
 		signinUser
@@ -23,5 +28,6 @@ module.exports = {
 
 	Set: SetType,
 	Account: AccountType,
-	Card: CardType
+	Card: CardType,
+	Tag: TagType
 };
