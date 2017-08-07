@@ -13,6 +13,7 @@ const SetType = require('./types/set');
 const AccountType = require('./types/account');
 const CardType = require('./types/card');
 const TagType = require('./types/tag');
+const TopicType = require('./types/topic');
 
 module.exports = {
 	Query: {
@@ -29,5 +30,6 @@ module.exports = {
 	Set: SetType,
 	Account: AccountType,
 	Card: CardType,
-	Tag: TagType
+	Tag: TagType,
+	Topic: TopicType
 };

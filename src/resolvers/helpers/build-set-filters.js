@@ -1,11 +1,13 @@
+const {ObjectId} = require('mongodb');
+
 //Filters for a set
-function buildSetFilters({OR = [], topic, tags_contain}){
-	const filter = (topic || tags_contain) ? {}: null;
+function buildSetFilters({OR = [], topic, tag}){
+	const filter = (topic || tag) ? {}: null;
 	if(topic){
-		filter.topic = {$regex: `.*${topic}*.`};
+		filter["topic._id"] = new ObjectId(topic);
 	}
-	if(tags_contain){
-		filter.tags = {$regex: tags_contain};
+	if(tag){
+		filter.tags = {$in: [tag]};
 	}
 
 	let filters = filter ? [filter] : [];
