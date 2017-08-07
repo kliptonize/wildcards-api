@@ -3,6 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const {graphqlExpress, graphiqlExpress} = require('apollo-server-express');
 
+//Set default ENV
+process.env.NODE_ENV = process.env.NODE_ENV || "dev";
+
 //Import Mongo Connector
 const connectMongo = require('./src/helpers/mongo-connector');
 
@@ -35,7 +38,7 @@ const start = async () => {
 
 	const PORT = 3000;
 	app.listen(PORT, () => {
-		console.log(`Wildcards GraphQL server running on port ${PORT}.`);
+		console.log(`Wildcards GraphQL api running on port ${PORT} in ${process.env.NODE_ENV}.`);
 	});
 };
 

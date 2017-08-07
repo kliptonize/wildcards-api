@@ -8,8 +8,10 @@ services:
     image: oolo/wildcards-api:latest
     build:
       context: .
+    environment:
+      - NODE_ENV=docker
     links:
       - mongo
     ports:
-      - "3000:3000"
+      - "80:3000"
     command: npm start

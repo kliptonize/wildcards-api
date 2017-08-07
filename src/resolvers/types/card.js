@@ -6,5 +6,8 @@ module.exports = {
 	},
 	set: async ({_id}, data, {mongo: {Sets}}) => {
 		return await Sets.findOne({_id: _id});
+	},
+	image: async(root, data) => {
+		return root.image.path;
 	}
 }
