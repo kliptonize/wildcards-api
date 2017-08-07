@@ -1,6 +1,8 @@
 const {MongoClient} = require('mongodb');
 
-const MONGO_URL = 'mongodb://mongo/wildcards';
+const config = require('./../config');
+
+const MONGO_URL = 'mongodb://' + config.mongo_url + '/wildcards';
 
 module.exports = async () => {
 	const db = await MongoClient.connect(MONGO_URL);
