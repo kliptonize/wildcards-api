@@ -39,7 +39,7 @@ const start = async () => {
 	app.use('/graphql', bodyParser.json(), graphqlExpress(buildOptions));
 	app.use('/graphiql', graphiqlExpress({
 		endpointURL: '/graphql',
-		passHeader: `'Authorization': 'bearer token-admin@wildcards.be'`	
+		passHeader: `'Authorization': 'bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTk5ODM0ODMsImRhdGEiOnsiX2lkIjoiNTk4YTFjMzBlOWMxMDFiZTk4MWE4YjRkIn0sImlhdCI6MTUwMjMwMzQ4M30.RHDlzxdPXYMvXHYCCaF3GapYujZ7iJNBnOYjQylWXUheR8xxzLVcGMxF7SA08OphO5MSGY8VUU6KgEueXa6WYw'`//Almost unlimited for use!	
 	}));
 
 	app.use(bodyParser.json());
