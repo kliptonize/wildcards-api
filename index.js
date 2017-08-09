@@ -50,7 +50,7 @@ const start = async () => {
 	switch(process.env.NODE_ENV){
 		case "docker":
 			var httpServer = http.createServer(app).listen(PORT, () => {
-				console.log(`Wildcards GraphQL api running on port ${PORT} in ${process.env.NODE_ENV}.`);
+				console.log(`Wildcards GraphQL (http) running on port ${PORT} in ${process.env.NODE_ENV}.`);
 			});
 			break;
 		case "dev":
@@ -59,7 +59,7 @@ const start = async () => {
 				key: fs.readFileSync('./src/config/cert/server.key', 'utf8'), 
 				cert: fs.readFileSync('./src/config/cert/server.crt', 'utf8')
 			}, app).listen(PORT, () => {
-				console.log(`Wildcards GraphQL api running on port ${PORT} in ${process.env.NODE_ENV}.`);
+				console.log(`Wildcards GraphQL (https) running on port ${PORT} in ${process.env.NODE_ENV}.`);
 			});
 			break;
 	}
