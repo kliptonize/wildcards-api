@@ -1,7 +1,7 @@
 FROM node:8.2.1
 
 # Expose the default port
-EXPOSE 3000
+EXPOSE 8443
 
 # Create/Set the working directory
 RUN mkdir /app
