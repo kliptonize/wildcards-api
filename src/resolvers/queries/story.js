@@ -3,14 +3,14 @@ const {ObjectId} = require('mongodb');
 
 module.exports = async (root,  {id}, {mongo: {Stories, Cards, Follows}, device}) => {
 	//Check if device follows this story, and update the last_seen variable
-	var follow = await Follows.findOne({device_id: device._id, story_id: id});
+	var follow = await Follows.findOne({device_id: new ObjectId(device._id), story_id: new ObjectId(id)});
 	if(follow){
 		Follows.update({
 			_id: follow._id
 		}, {
 			$set: {
-				last_seen: Math.floor(Date.now() / 1000),
-				_modified: Math.floor(Date.now() / 1000)
+				last_read: Math.floor(Date.now() / 1000),
+				_updated: Math.floor(Date.now() / 1000)
 			}
 		});
 	}
