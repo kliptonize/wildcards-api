@@ -1,6 +1,6 @@
 //Returns all tags
 
-module.exports = async (root, data, {mongo: {Sets}, account}) => {
+module.exports = async (root, data, {mongo: {Sets}, device}) => {
 	//Perform a distinct query for all tags
 	var distinctTags = await Sets.distinct('tags');
 

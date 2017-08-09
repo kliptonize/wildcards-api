@@ -8,7 +8,7 @@ const queries = `
 		stories(filter: StoryFilter, start: Int, limit: Int): [Story]
 
 		# Query only your followed stories
-		myStories: [Story]
+		myFollowedStories: [Story]
 
 		# Get one specific story
 		story(id: ID!): Story

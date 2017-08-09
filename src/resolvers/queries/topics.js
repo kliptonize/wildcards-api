@@ -1,6 +1,6 @@
 //Returns all tags
 
-module.exports = async (root, data, {mongo: {Topics, Sets}, account}) => {
+module.exports = async (root, data, {mongo: {Topics, Sets}, device}) => {
 	//Perform a distinct query for all tags
 	var topics = await Topics.find().toArray();
 

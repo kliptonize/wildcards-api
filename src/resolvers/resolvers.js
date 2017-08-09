@@ -1,6 +1,6 @@
 //Load queries
 const allStories = require('./queries/all-stories');
-const myStories = require('./queries/my-stories');
+const myFollowedStories = require('./queries/my-followed-stories');
 const story = require('./queries/story');
 const topics = require('./queries/topics');
 const tags = require('./queries/tags');
@@ -19,7 +19,7 @@ const TopicType = require('./types/topic');
 module.exports = {
 	Query: {
 		stories: allStories,
-		myStories,
+		myFollowedStories,
 		story,
 		topics,
 		tags
