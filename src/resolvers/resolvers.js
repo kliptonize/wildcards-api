@@ -5,6 +5,10 @@ const story = require('./queries/story');
 const topics = require('./queries/topics');
 const tags = require('./queries/tags');
 
+//Load Mutations
+const followStory = require('./mutations/follow-story');
+const unfollowStory = require('./mutations/unfollow-story');
+
 //Load additional auto-functions for types
 const StoryType = require('./types/story');
 const AccountType = require('./types/account');
@@ -20,6 +24,10 @@ module.exports = {
 		topics,
 		tags
 	},
+	Mutation {
+		followStory,
+		unfollowStory
+	},
 
 	Story: StoryType,
 	Account: AccountType,
@@ -27,9 +35,3 @@ module.exports = {
 	Tag: TagType,
 	Topic: TopicType
 };
-
-/* 
-Mutation {
-	name of mutation	
-},
-*/

@@ -28,10 +28,10 @@ const start = async () => {
 
 	var app = express();
 	const buildOptions = async (req, res) => {
-		const account = await authenticate(req, res, mongo.Devices);
+		const device = await authenticate(req, res, mongo.Devices);
 		return {
 			dataloaders: buildDataLoaders(mongo),
-			context: {mongo, account},
+			context: {mongo, device},
 			schema,
 		}
 	};
