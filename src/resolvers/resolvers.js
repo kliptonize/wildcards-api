@@ -24,7 +24,7 @@ module.exports = {
 		topics,
 		tags
 	},
-	Mutation {
+	Mutation: {
 		followStory,
 		unfollowStory
 	},

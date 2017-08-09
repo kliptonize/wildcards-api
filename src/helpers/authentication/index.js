@@ -17,20 +17,22 @@ const connectMongo = require('./../mongo-connector');
 
 router.post('/identify', async function(req, res){
 	//Check if device_id is set
-	if(!req.body.device_id){
+	if(!req.body.device_uuid){
 		res.status(400);
-		res.send({message: "Bad request, device_id not provided"});
+		res.send({message: "Bad request, device_uuid not provided"});
 		return;
 	}
 
-	//Request body contains device_id, so this'll be the account
+	//Request body contains device_uuid, so this'll be the account
 	const mongo = await connectMongo();
-	var device = await mongo.Devices.findOne({device_id: req.body.device_id});
+	var device = await mongo.Devices.findOne({device_uuid: req.body.device_uuid});
 
 	if(device == null){
 		//New device, register it
 		device = await mongo.Devices.insert({
-			"device_id": req.body.device_id,
+			"device_uuid": req.body.device_uuid,
+			_created: Math.floor(Date.now() / 1000),
+			_updated: Math.floor(Date.now() / 1000)
 		});
 		if(!device.result.ok){
 			res.status(500);

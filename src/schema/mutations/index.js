@@ -1,7 +1,10 @@
 const mutations = `
 	type Mutation{
-		followStory(story: ID!): Story
-		unfollowStory(story: ID!): Story
+		# Start following a certain story
+		followStory(story_id: ID!): Story
+		
+		# Stop following a certain story
+		unfollowStory(story_id: ID!): Story
 	}
 `;
 

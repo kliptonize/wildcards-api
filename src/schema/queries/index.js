@@ -4,12 +4,19 @@ const StoryFilter = require('./filters/story-filter');
 
 const queries = `
 	type Query {
+		# Query a set of stories
 		stories(filter: StoryFilter, start: Int, limit: Int): [Story]
+
+		# Query only your followed stories
 		myStories: [Story]
+
+		# Get one specific story
 		story(id: ID!): Story
 
+		# Get the list of topics
 		topics: [Topic]
 
+		# Get the list of tags
 		tags: [Tag]
 	}
 `;
