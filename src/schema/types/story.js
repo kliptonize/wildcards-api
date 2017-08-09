@@ -15,6 +15,9 @@ const Story = `
 		topic: Topic
 		cards : [Card]
 		amountOfCards: Int
+		hasUpdates: Boolean
+		created: Int
+		modified: Int
 	}
 `;
 

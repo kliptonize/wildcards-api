@@ -3,7 +3,7 @@
 //Load helpers
 const buildStoryFilters = require('./../helpers/build-story-filters');
 
-module.exports = async (root, {filter, start, limit}, {mongo: {Stories}, account}) => {
+module.exports = async (root, {filter, start, limit}, {mongo: {Stories}, device}) => {
 	let query = filter ? {$or: buildStoryFilters(filter)} : {};
 	const cursor = Stories.find(query);
 	if(start){

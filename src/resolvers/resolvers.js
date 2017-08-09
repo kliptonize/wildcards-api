@@ -1,9 +1,13 @@
 //Load queries
 const allStories = require('./queries/all-stories');
-const myStories = require('./queries/my-stories');
+const myFollowedStories = require('./queries/my-followed-stories');
 const story = require('./queries/story');
 const topics = require('./queries/topics');
 const tags = require('./queries/tags');
+
+//Load Mutations
+const followStory = require('./mutations/follow-story');
+const unfollowStory = require('./mutations/unfollow-story');
 
 //Load additional auto-functions for types
 const StoryType = require('./types/story');
@@ -15,10 +19,14 @@ const TopicType = require('./types/topic');
 module.exports = {
 	Query: {
 		stories: allStories,
-		myStories,
+		myFollowedStories,
 		story,
 		topics,
 		tags
+	},
+	Mutation: {
+		followStory,
+		unfollowStory
 	},
 
 	Story: StoryType,
@@ -27,9 +35,3 @@ module.exports = {
 	Tag: TagType,
 	Topic: TopicType
 };
-
-/* 
-Mutation {
-	name of mutation	
-},
-*/

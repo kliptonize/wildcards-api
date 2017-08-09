@@ -12,6 +12,7 @@ module.exports = async () => {
 		Sources: db.collection('collections_Sources5974b82c30ead'),
 		Topics: db.collection('collections_Topics597a53c4e3e5f'),
 		Accounts: db.collection('cockpit_accounts'),
-		Devices: db.collection('wildcards_accounts')
+		Devices: db.collection('wildcards_accounts'),
+		Follows: db.collection('wildcards_follows')
 	}
 }
