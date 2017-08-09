@@ -27,3 +27,9 @@ module.exports = {
 	Tag: TagType,
 	Topic: TopicType
 };
+
+/* 
+Mutation {
+	name of mutation	
+},
+*/
