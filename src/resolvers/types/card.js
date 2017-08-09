@@ -4,8 +4,8 @@ module.exports = {
 	by: async ({_by}, data, {mongo: {Accounts}}) => {
 		return await Accounts.findOne({_id: _by});
 	},
-	set: async ({_id}, data, {mongo: {Sets}}) => {
-		return await Sets.findOne({_id: _id});
+	story: async ({_id}, data, {mongo: {Stories}}) => {
+		return await Stories.findOne({_id: _id});
 	},
 	image: async(root, data) => {
 		return root.image.path;

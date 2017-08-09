@@ -3,8 +3,8 @@ const Topic = require('./topic');
 const Source = require('./source');
 const Card = require('./card');
 
-const Set = `
-	type Set {
+const Story = `
+	type Story {
 		id: ID!
 		title: String!
 		image: String
@@ -12,10 +12,10 @@ const Set = `
 		source: [Source]
 		sourceUrl: String
 		by: Account
-		topic: Topic,
+		topic: Topic
 		cards : [Card]
 		amountOfCards: Int
 	}
 `;
 
-module.exports = [Set, Account, Topic, Source];
+module.exports = [Story, Account, Topic, Source];

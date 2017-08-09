@@ -1,12 +1,12 @@
-const Set = require('./../types/set');
+const Story = require('./../types/story');
 const Tag = require('./../types/tag');
-const SetFilter = require('./filters/set-filter');
+const StoryFilter = require('./filters/story-filter');
 
 const queries = `
 	type Query {
-		sets(filter: SetFilter, start: Int, limit: Int): [Set]
-		mySets: [Set]
-		set(id: ID!): Set
+		stories(filter: StoryFilter, start: Int, limit: Int): [Story]
+		myStories: [Story]
+		story(id: ID!): Story
 
 		topics: [Topic]
 
@@ -14,4 +14,4 @@ const queries = `
 	}
 `;
 
-module.exports = [queries, SetFilter, ...Set, Tag];
+module.exports = [queries, StoryFilter, ...Story, Tag];

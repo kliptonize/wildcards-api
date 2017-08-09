@@ -1,5 +1,5 @@
 //Import schema types
-const Set = require('./types/set');
+const Story = require('./types/story');
 const Card = require('./types/card');
 
 //Import schema queries
@@ -10,7 +10,7 @@ const mutations = require('./mutations');
 
 module.exports = {
 	types: [
-		...Set,
+		...Story,
 		...Card
 	],
 	queries: [

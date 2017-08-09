@@ -1,5 +1,5 @@
 const Account = require('./account');
-const Set = require('./set');
+const Story = require('./story');
 
 const Card = `
 	type Card {
@@ -7,7 +7,7 @@ const Card = `
 		title: String!
 		image: String
 		by: Account
-		set: Set
+		story: Story
 	}
 `;
 

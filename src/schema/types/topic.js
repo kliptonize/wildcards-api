@@ -3,7 +3,7 @@ const Topic = `
 		id: ID!
 		name: String!
 		color: String
-		amountOfSets: Int
+		amountOfStories: Int
 	}
 `;
 

@@ -5,8 +5,8 @@ module.exports = {
 		return await Accounts.findOne({_id: _by});
 	},
 	amountOfCards: async(root, data, {mongo: {Cards}}) => {
-		//Add a count of all cards on this set
-		return await Cards.count({'set._id': root._id});
+		//Add a count of all cards on this story
+		return await Cards.count({'story._id': root._id});
 	},
 	topic: async(root, data, {mongo: {Topics}}) => {
 		return await Topics.findOne({_id: root.topic._id});
