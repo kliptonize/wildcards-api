@@ -14,7 +14,6 @@ process.env.NODE_ENV = process.env.NODE_ENV || "dev";
 //Import Mongo Connector
 const connectMongo = require('./src/helpers/mongo-connector');
 
-
 //Import authenticator
 const {authenticationRouter, authenticate} = require('./src/helpers/authentication');
 
@@ -36,13 +35,13 @@ const start = async () => {
 			schema,
 		}
 	};
+	app.use(bodyParser.json());
+
 	app.use('/graphql', bodyParser.json(), graphqlExpress(buildOptions));
 	app.use('/graphiql', graphiqlExpress({
 		endpointURL: '/graphql',
 		passHeader: `'Authorization': 'bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTk5ODM0ODMsImRhdGEiOnsiX2lkIjoiNTk4YTFjMzBlOWMxMDFiZTk4MWE4YjRkIn0sImlhdCI6MTUwMjMwMzQ4M30.RHDlzxdPXYMvXHYCCaF3GapYujZ7iJNBnOYjQylWXUheR8xxzLVcGMxF7SA08OphO5MSGY8VUU6KgEueXa6WYw'`//Almost unlimited for use!	
 	}));
-
-	app.use(bodyParser.json());
 	app.use('/authenticate', authenticationRouter);
 
 
